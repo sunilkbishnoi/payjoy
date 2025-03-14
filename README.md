@@ -1,5 +1,3 @@
----
-
 # Welcome to the PayJoy Project
 
 ## Project Overview
@@ -85,5 +83,3 @@ For a full list of features, visit [https://payjoy.vercel.app/](https://payjoy.v
 
 
 Ready to dive in? Clone the repo from [https://github.com/sunilkbishnoi/payjoy](https://github.com/sunilkbishnoi/payjoy) and start exploring!
-
----
