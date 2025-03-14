@@ -1,10 +1,13 @@
+---
+
 # Welcome to the PayJoy Project
 
 ## Project Overview
 
-This repository contains the source code for **PayJoy**, a modern payment solution that integrates UPI Tap-to-Pay technology with a contactless card and a super app. PayJoy aims to simplify transactions for travel, retail, utilities, and more, offering a seamless and secure payment experience.
+This repository contains the source code for **PayJoy**, a modern payment solution that integrates UPI Tap-to-Pay technology with a contactless card and a super app. PayJoy simplifies transactions for travel, retail, utilities, and more, offering a seamless and secure payment experience.
 
-**Project URL**: https://payjoy.dev (Placeholder URL - replace with actual URL if available)
+**Project URL**: [https://payjoy.vercel.app/](https://payjoy.vercel.app/)  
+**Repository URL**: [https://github.com/sunilkbishnoi/payjoy](https://github.com/sunilkbishnoi/payjoy)
 
 ## What is PayJoy?
 
@@ -20,7 +23,7 @@ To work locally with your favorite IDE:
 
 1. Clone this repository:
    ```sh
-   git clone <YOUR_GIT_URL>
+   git clone https://github.com/sunilkbishnoi/payjoy.git
    ```
 2. Navigate to the project directory:
    ```sh
@@ -37,13 +40,13 @@ To work locally with your favorite IDE:
 
 ### Edit Files Directly in GitHub
 
-- Navigate to the desired file in the repository.
+- Navigate to the desired file in the repository: [https://github.com/sunilkbishnoi/payjoy](https://github.com/sunilkbishnoi/payjoy).
 - Click the "Edit" button (pencil icon) at the top right.
 - Make changes and commit them directly.
 
 ### Use GitHub Codespaces
 
-- Go to the main repository page.
+- Go to the main repository page: [https://github.com/sunilkbishnoi/payjoy](https://github.com/sunilkbishnoi/payjoy).
 - Click the "Code" button (green button).
 - Select the "Codespaces" tab and click "New codespace."
 - Edit files in the browser-based environment and commit your changes.
@@ -60,19 +63,15 @@ This project is built with the following technologies:
 
 ## How Can I Deploy This Project?
 
-To deploy PayJoy:
+The project is currently deployed at [https://payjoy.vercel.app/](https://payjoy.vercel.app/) using Vercel. To deploy your own instance:
 
 1. Build the project locally:
    ```sh
    npm run build
    ```
-2. Host the output (from the `dist` folder) on a static hosting service like Netlify, Vercel, or GitHub Pages.
+2. Host the output (from the `dist` folder) on a static hosting service like Vercel, Netlify, or GitHub Pages.
 
-For more deployment options, refer to the documentation of your preferred hosting platform.
 
-## Can I Use a Custom Domain?
-
-Custom domains are not natively supported yet. For now, we recommend deploying to a service like Netlify and configuring your domain there. Check their docs for details: [Netlify Custom Domains](https://docs.netlify.com/domains-https/custom-domains/).
 
 ## Project Features
 
@@ -82,16 +81,9 @@ Custom domains are not natively supported yet. For now, we recommend deploying t
 - **Advanced Security**: Tokenized transactions, encryption, and real-time fraud detection.
 - **Premium Benefits**: Priority processing, rewards, and travel insurance for subscribers.
 
-For a full list of features, explore the app or visit the [PayJoy website](https://payjoy.dev).
+For a full list of features, visit [https://payjoy.vercel.app/](https://payjoy.vercel.app/).
 
-## Getting Started
 
-1. **Get Your Card**: Order online or pick up from authorized centers.
-2. **Activate & Load**: Tap your card on your phone to load funds via any UPI app.
-3. **Tap & Pay**: Use it anywhere with NFC-enabled terminals.
-
-Ready to dive in? Clone the repo and start exploring!
+Ready to dive in? Clone the repo from [https://github.com/sunilkbishnoi/payjoy](https://github.com/sunilkbishnoi/payjoy) and start exploring!
 
 ---
-
-This version removes all "Lovable" branding, replaces it with PayJoy-specific details, and provides a clear explanation of the project’s purpose and functionality. Let me know if you’d like further adjustments!
