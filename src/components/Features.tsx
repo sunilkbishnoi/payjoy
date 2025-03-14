@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -31,7 +30,7 @@ const features = [
     color: 'bg-purple-50 text-purple-600'
   },
   {
-    icon: Refresh,
+    icon: RefreshCw,
     title: 'Auto-Recharge',
     description: 'Set up automatic reloads when your balance falls below a threshold you set.',
     color: 'bg-green-50 text-green-600'
