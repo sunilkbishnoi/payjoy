@@ -55,7 +55,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: '300ms' }}>
               <Button 
                 size="lg" 
-                className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="rounded-full bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={handleGetCard}
               >
                 Get Your Card
@@ -92,19 +92,20 @@ const Hero = () => {
             <div className="relative aspect-[4/3] p-6">
               {/* Logo display */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                <div className="relative h-24 md:h-28 w-24 md:w-28 overflow-hidden rounded-2xl bg-gradient-to-br from-purple-600 to-blue-600 p-[3px] shadow-lg shadow-purple-500/20 animate-float">
+                <div className="relative h-24 md:h-28 w-24 md:w-28 overflow-hidden rounded-2xl bg-white p-[2px] shadow-lg shadow-purple-500/30 animate-float">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-blue-600 to-cyan-400 opacity-20 hover:opacity-30 transition-opacity duration-300 rounded-2xl"></div>
                   <img 
-                    src="/lovable-uploads/c63c0914-45fc-498f-bd38-5e3149794f15.png" 
+                    src="/lovable-uploads/b8027dcc-1bb5-4237-991d-e70e67cf9e7e.png" 
                     alt="PayJoy Logo" 
-                    className="h-full w-full rounded-[calc(1rem-3px)] bg-white p-2 object-contain"
+                    className="h-full w-full rounded-[calc(1rem-2px)] p-2 object-contain relative z-10"
                   />
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-600/20 to-blue-600/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-600/10 to-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </div>
               
               {/* Main card */}
               <div className={cn(
-                "absolute payment-card bg-gradient-to-br from-purple-600 to-blue-600 p-6",
+                "absolute payment-card bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-500 p-6",
                 "flex flex-col justify-between text-white shadow-xl rotate-6",
                 "animate-float hover-scale origin-bottom-left",
                 "border border-white/20"
@@ -135,7 +136,7 @@ const Hero = () => {
               
               {/* Secondary card */}
               <div className={cn(
-                "absolute payment-card bg-gradient-to-br from-pink-600 to-purple-600 p-6",
+                "absolute payment-card bg-gradient-to-br from-pink-500 via-purple-600 to-blue-600 p-6",
                 "flex flex-col justify-between text-white shadow-xl -rotate-6",
                 "animate-float hover-scale origin-bottom-right",
                 "border border-white/20",

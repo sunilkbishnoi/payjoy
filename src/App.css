@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +40,83 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Custom animations and styling */
+.payment-card {
+  width: 280px;
+  height: 170px;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shadow-button {
+  box-shadow: 0 8px 15px rgba(124, 58, 237, 0.2);
+}
+
+.shadow-card {
+  box-shadow: 0 20px 30px rgba(124, 58, 237, 0.1);
+}
+
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #9333ea, #3b82f6, #06b6d4);
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+.ease-apple {
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }

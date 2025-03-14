@@ -54,15 +54,16 @@ export const Header = () => {
           to="/" 
           className="flex items-center gap-3 transition-opacity duration-300 hover:opacity-80"
         >
-          <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 p-[2px] shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-shadow duration-300">
+          <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-white p-[1px] shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-shadow duration-300">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-blue-600 to-cyan-400 opacity-20 hover:opacity-30 transition-opacity duration-300 rounded-xl"></div>
             <img 
-              src="/lovable-uploads/c63c0914-45fc-498f-bd38-5e3149794f15.png" 
+              src="/lovable-uploads/b8027dcc-1bb5-4237-991d-e70e67cf9e7e.png" 
               alt="PayJoy Logo" 
-              className="h-full w-full rounded-[calc(0.75rem-2px)] bg-white p-1.5 object-contain"
+              className="h-full w-full rounded-[calc(0.75rem-1px)] object-contain p-1 relative z-10"
             />
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-600/20 to-blue-600/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-600/10 to-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
           </div>
-          <span className="text-xl font-semibold tracking-tight bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">PayJoy</span>
+          <span className="text-xl font-semibold tracking-tight bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 bg-clip-text text-transparent">PayJoy</span>
         </Link>
 
         {/* Desktop Navigation */}
