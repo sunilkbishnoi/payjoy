@@ -1,13 +1,59 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
 import { Button } from "@/components/ui/button";
 import { CreditCard, NfcIcon, Shield, ArrowRight, MapPin, Wallet } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
+  const navigate = useNavigate();
+  const { toast } = useToast();
+
+  const handleGetStarted = () => {
+    toast({
+      title: "Get Started",
+      description: "We'll help you get started with PayJoy!",
+      variant: "default",
+    });
+  };
+
+  const handleLearnMoreSecurity = () => {
+    toast({
+      title: "Security Information",
+      description: "PayJoy uses industry-leading security standards to protect your data and transactions.",
+      variant: "default",
+    });
+  };
+
+  const handleGetCardToday = () => {
+    toast({
+      title: "Card Request Initiated",
+      description: "You'll be contacted shortly about your new PayJoy card!",
+      variant: "default",
+    });
+    setTimeout(() => navigate('/card'), 1500);
+  };
+
+  const handleLearnMore = () => {
+    // Scroll to the features section
+    const featuresSection = document.querySelector('section.py-24.overflow-hidden');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleFooterLinkClick = (link: string) => {
+    toast({
+      title: link,
+      description: `You've clicked on the ${link} link.`,
+      variant: "default",
+    });
+  };
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -17,7 +63,7 @@ const Index = () => {
         <Features />
         
         {/* How it works section */}
-        <section className="py-24 bg-primary/5">
+        <section className="py-24 bg-primary/5" id="how-it-works">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
@@ -54,8 +100,14 @@ const Index = () => {
               ].map((item, index) => (
                 <div 
                   key={index} 
-                  className="flex flex-col items-center text-center p-6 animate-fade-in"
+                  className="flex flex-col items-center text-center p-6 animate-fade-in hover-scale cursor-pointer"
                   style={{ animationDelay: `${item.delay}ms` }}
+                  onClick={() => {
+                    toast({
+                      title: item.title,
+                      description: item.description,
+                    });
+                  }}
                 >
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
                     <item.icon className="h-8 w-8 text-primary" />
@@ -70,7 +122,11 @@ const Index = () => {
             </div>
             
             <div className="text-center mt-12">
-              <Button size="lg" className="rounded-full shadow-button hover:shadow-none transition-all duration-300 gap-2 animate-fade-in">
+              <Button 
+                size="lg" 
+                className="rounded-full shadow-button hover:shadow-none transition-all duration-300 gap-2 animate-fade-in"
+                onClick={handleGetStarted}
+              >
                 <span>Get Started</span>
                 <ArrowRight className="h-4 w-4" />
               </Button>
@@ -114,7 +170,11 @@ const Index = () => {
                   ))}
                 </div>
                 
-                <Button size="lg" className="rounded-full shadow-button hover:shadow-none transition-all duration-300">
+                <Button 
+                  size="lg" 
+                  className="rounded-full shadow-button hover:shadow-none transition-all duration-300"
+                  onClick={handleLearnMoreSecurity}
+                >
                   Learn More About Security
                 </Button>
               </div>
@@ -164,10 +224,20 @@ const Index = () => {
                 Join thousands of users who have simplified their daily transactions with PayJoy's UPI Tap-to-Pay card.
               </p>
               <div className="flex flex-wrap justify-center gap-4 animate-fade-in" style={{ animationDelay: '200ms' }}>
-                <Button size="lg" variant="secondary" className="rounded-full shadow-button hover:shadow-none transition-all duration-300">
+                <Button 
+                  size="lg" 
+                  variant="secondary" 
+                  className="rounded-full shadow-button hover:shadow-none transition-all duration-300"
+                  onClick={handleGetCardToday}
+                >
                   Get Your Card Today
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-full border-white/30 text-white hover:bg-white/10 hover:text-white">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="rounded-full border-white/30 text-white hover:bg-white/10 hover:text-white"
+                  onClick={handleLearnMore}
+                >
                   Learn More
                 </Button>
               </div>
@@ -210,7 +280,14 @@ const Index = () => {
                   <ul className="space-y-3">
                     {column.links.map((link, j) => (
                       <li key={j}>
-                        <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                        <a 
+                          href="#" 
+                          className="text-muted-foreground hover:text-foreground transition-colors"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleFooterLinkClick(link);
+                          }}
+                        >
                           {link}
                         </a>
                       </li>
@@ -226,7 +303,15 @@ const Index = () => {
               </p>
               <div className="flex gap-4 mt-4 md:mt-0">
                 {['Twitter', 'Facebook', 'Instagram', 'LinkedIn'].map((social, i) => (
-                  <a key={i} href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <a 
+                    key={i} 
+                    href="#" 
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleFooterLinkClick(social);
+                    }}
+                  >
                     {social}
                   </a>
                 ))}

@@ -25,6 +25,8 @@ import {
   Crown
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useToast } from "@/components/ui/use-toast";
+import { useNavigate } from 'react-router-dom';
 
 const features = [
   {
@@ -135,6 +137,42 @@ const premiumFeatures = [
 ];
 
 const Features = () => {
+  const { toast } = useToast();
+  const navigate = useNavigate();
+
+  const handleExploreFeatures = () => {
+    toast({
+      title: "Explore All Features",
+      description: "Discover all the amazing features PayJoy has to offer!",
+    });
+  };
+
+  const handleUpgradeNow = () => {
+    toast({
+      title: "Premium Subscription",
+      description: "You're being redirected to our premium subscription options.",
+      variant: "default",
+    });
+    // Navigate to card page which would contain premium options
+    setTimeout(() => navigate('/card'), 1500);
+  };
+
+  const handleFeatureClick = (feature: any) => {
+    toast({
+      title: feature.title,
+      description: feature.description,
+      variant: "default",
+    });
+  };
+
+  const handleTravelFeatureClick = (feature: any) => {
+    toast({
+      title: `${feature.title} Payments`,
+      description: `Use PayJoy for seamless ${feature.title.toLowerCase()} payments and bookings.`,
+      variant: "default",
+    });
+  };
+
   return (
     <section className="py-24 overflow-hidden">
       <div className="container px-4 md:px-6 mx-auto">
@@ -151,11 +189,14 @@ const Features = () => {
         <div className="relative mb-20 max-w-4xl mx-auto">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-300/30 to-blue-300/30 rounded-3xl blur-xl -z-10"></div>
           <div className="flex justify-center">
-            <img 
-              src="/lovable-uploads/c63c0914-45fc-498f-bd38-5e3149794f15.png" 
-              alt="PayJoy Logo" 
-              className="h-32 md:h-40 mb-6 animate-float"
-            />
+            <div className="relative h-32 md:h-40 w-32 md:w-40 overflow-hidden rounded-3xl bg-gradient-to-br from-purple-600 to-blue-600 p-[3px] shadow-lg shadow-purple-500/20 animate-float mb-6">
+              <img 
+                src="/lovable-uploads/c63c0914-45fc-498f-bd38-5e3149794f15.png" 
+                alt="PayJoy Logo" 
+                className="h-full w-full rounded-[calc(1.5rem-3px)] bg-white p-3 object-contain"
+              />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-600/20 to-blue-600/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
           </div>
           <div className="text-center mb-6">
             <h3 className="text-2xl font-bold text-primary">The Future of Payments</h3>
@@ -177,6 +218,7 @@ const Features = () => {
                   animationDelay: `${index * 100}ms`,
                   background: `linear-gradient(to bottom right, var(--tw-gradient-stops))` 
                 }}
+                onClick={() => handleTravelFeatureClick(feature)}
               >
                 <div className="h-full w-full rounded-xl bg-white flex flex-col items-center justify-center p-4">
                   <feature.icon className="h-10 w-10 mb-3" />
@@ -192,8 +234,9 @@ const Features = () => {
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="p-6 hover-lift hover-scale border-0 shadow-card animate-fade-in"
+              className="p-6 hover-lift hover-scale border-0 shadow-card animate-fade-in cursor-pointer"
               style={{ animationDelay: `${index * 100}ms` }}
+              onClick={() => handleFeatureClick(feature)}
             >
               <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center mb-4", feature.color)}>
                 <feature.icon className="h-6 w-6" />
@@ -221,7 +264,8 @@ const Features = () => {
             {premiumFeatures.map((feature, index) => (
               <div 
                 key={index} 
-                className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-6 hover-lift"
+                className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-6 hover-lift cursor-pointer"
+                onClick={() => handleFeatureClick(feature)}
               >
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white flex items-center justify-center mb-4">
                   <feature.icon className="h-5 w-5" />
@@ -233,7 +277,11 @@ const Features = () => {
           </div>
 
           <div className="text-center mt-10">
-            <Button size="lg" className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg hover:shadow-xl transition-all duration-300">
+            <Button 
+              size="lg" 
+              className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={handleUpgradeNow}
+            >
               Upgrade Now
             </Button>
           </div>
@@ -241,7 +289,11 @@ const Features = () => {
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <Button size="lg" className="rounded-full shadow-button hover:shadow-none transition-all duration-300 animate-fade-in">
+          <Button 
+            size="lg" 
+            className="rounded-full shadow-button hover:shadow-none transition-all duration-300 animate-fade-in"
+            onClick={handleExploreFeatures}
+          >
             Explore All Features
           </Button>
         </div>

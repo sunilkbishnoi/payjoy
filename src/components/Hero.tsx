@@ -3,8 +3,29 @@ import React from 'react';
 import { CreditCard, NfcIcon, Smartphone, ShoppingCart } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
+import { useToast } from "@/components/ui/use-toast";
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const { toast } = useToast();
+  const navigate = useNavigate();
+
+  const handleGetCard = () => {
+    toast({
+      title: "Card Request Received",
+      description: "We'll process your card request and contact you shortly!",
+      variant: "default",
+    });
+  };
+
+  const handleHowItWorks = () => {
+    // Scroll to the how it works section
+    const howItWorksSection = document.querySelector('section[class*="py-24 bg-primary/5"]');
+    if (howItWorksSection) {
+      howItWorksSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       {/* Background gradient */}
@@ -32,10 +53,19 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: '300ms' }}>
-              <Button size="lg" className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button 
+                size="lg" 
+                className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg hover:shadow-xl transition-all duration-300"
+                onClick={handleGetCard}
+              >
                 Get Your Card
               </Button>
-              <Button variant="outline" size="lg" className="rounded-full border-2">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="rounded-full border-2"
+                onClick={handleHowItWorks}
+              >
                 How It Works
               </Button>
             </div>
@@ -62,11 +92,14 @@ const Hero = () => {
             <div className="relative aspect-[4/3] p-6">
               {/* Logo display */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                <img 
-                  src="/lovable-uploads/c63c0914-45fc-498f-bd38-5e3149794f15.png" 
-                  alt="PayJoy Logo" 
-                  className="h-24 md:h-28 animate-float"
-                />
+                <div className="relative h-24 md:h-28 w-24 md:w-28 overflow-hidden rounded-2xl bg-gradient-to-br from-purple-600 to-blue-600 p-[3px] shadow-lg shadow-purple-500/20 animate-float">
+                  <img 
+                    src="/lovable-uploads/c63c0914-45fc-498f-bd38-5e3149794f15.png" 
+                    alt="PayJoy Logo" 
+                    className="h-full w-full rounded-[calc(1rem-3px)] bg-white p-2 object-contain"
+                  />
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-600/20 to-blue-600/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </div>
               
               {/* Main card */}

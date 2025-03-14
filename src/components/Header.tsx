@@ -4,11 +4,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, LayoutDashboard, CreditCard } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useToast } from "@/components/ui/use-toast";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { toast } = useToast();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +28,13 @@ export const Header = () => {
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
+
+  const handleGetStarted = () => {
+    toast({
+      title: "Get Started",
+      description: "Thank you for your interest! We'll contact you shortly.",
+    });
+  };
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -45,12 +54,15 @@ export const Header = () => {
           to="/" 
           className="flex items-center gap-3 transition-opacity duration-300 hover:opacity-80"
         >
-          <img 
-            src="/lovable-uploads/c63c0914-45fc-498f-bd38-5e3149794f15.png" 
-            alt="PayJoy Logo" 
-            className="h-10"
-          />
-          <span className="text-xl font-semibold tracking-tight text-primary">PayJoy</span>
+          <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 p-[2px] shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-shadow duration-300">
+            <img 
+              src="/lovable-uploads/c63c0914-45fc-498f-bd38-5e3149794f15.png" 
+              alt="PayJoy Logo" 
+              className="h-full w-full rounded-[calc(0.75rem-2px)] bg-white p-1.5 object-contain"
+            />
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-600/20 to-blue-600/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <span className="text-xl font-semibold tracking-tight bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">PayJoy</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -69,7 +81,11 @@ export const Header = () => {
               <span>{link.name}</span>
             </Link>
           ))}
-          <Button size="sm" className="ml-2 rounded-full shadow-button hover:shadow-none transition-all duration-300">
+          <Button 
+            size="sm" 
+            className="ml-2 rounded-full shadow-button hover:shadow-none transition-all duration-300"
+            onClick={handleGetStarted}
+          >
             Get Started
           </Button>
         </nav>
@@ -107,7 +123,10 @@ export const Header = () => {
             <span>{link.name}</span>
           </Link>
         ))}
-        <Button className="mt-4 w-full rounded-xl shadow-button">
+        <Button 
+          className="mt-4 w-full rounded-xl shadow-button" 
+          onClick={handleGetStarted}
+        >
           Get Started
         </Button>
       </div>
