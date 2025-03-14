@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, CreditCard, LayoutDashboard } from 'lucide-react';
+import { Menu, X, LayoutDashboard, CreditCard } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -43,12 +43,14 @@ export const Header = () => {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link 
           to="/" 
-          className="flex items-center gap-2 transition-opacity duration-300 hover:opacity-80"
+          className="flex items-center gap-3 transition-opacity duration-300 hover:opacity-80"
         >
-          <div className="h-10 w-10 bg-primary rounded-xl flex items-center justify-center">
-            <CreditCard className="h-5 w-5 text-white" />
-          </div>
-          <span className="text-xl font-semibold tracking-tight">PayJoy</span>
+          <img 
+            src="/lovable-uploads/c63c0914-45fc-498f-bd38-5e3149794f15.png" 
+            alt="PayJoy Logo" 
+            className="h-10"
+          />
+          <span className="text-xl font-semibold tracking-tight text-primary">PayJoy</span>
         </Link>
 
         {/* Desktop Navigation */}

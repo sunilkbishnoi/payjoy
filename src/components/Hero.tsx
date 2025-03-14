@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { CreditCard, NfcIcon, Smartphone, ShoppingCart } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
@@ -9,22 +8,22 @@ const Hero = () => {
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-transparent -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-purple-50 via-blue-50 to-transparent -z-10" />
       
       {/* Decorative elements */}
-      <div className="absolute top-20 left-1/4 h-64 w-64 bg-blue-200/20 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-10 right-1/4 h-80 w-80 bg-purple-200/20 rounded-full blur-3xl -z-10" />
+      <div className="absolute top-20 left-1/4 h-64 w-64 bg-purple-200/20 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-10 right-1/4 h-80 w-80 bg-blue-200/20 rounded-full blur-3xl -z-10" />
       
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Text content */}
           <div className="flex-1 max-w-2xl">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 animate-fade-in">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-purple-100 to-blue-100 text-primary text-sm font-medium mb-6 animate-fade-in">
               <NfcIcon className="h-4 w-4 mr-2" />
               <span>UPI Tap-to-Pay Technology</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight text-balance mb-6 animate-fade-in" style={{ animationDelay: '100ms' }}>
+            <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight text-balance mb-6 animate-fade-in bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 bg-clip-text text-transparent" style={{ animationDelay: '100ms' }}>
               The Smarter Way to Pay, Travel & Save
             </h1>
             
@@ -33,7 +32,7 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: '300ms' }}>
-              <Button size="lg" className="rounded-full shadow-button hover:shadow-none transition-all duration-300">
+              <Button size="lg" className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg hover:shadow-xl transition-all duration-300">
                 Get Your Card
               </Button>
               <Button variant="outline" size="lg" className="rounded-full border-2">
@@ -49,7 +48,7 @@ const Hero = () => {
                 { icon: Smartphone, label: "Mobile Recharge" }
               ].map((item, i) => (
                 <div key={i} className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-100 to-blue-100 flex items-center justify-center mb-3">
                     <item.icon className="h-6 w-6 text-primary" />
                   </div>
                   <span className="text-sm font-medium">{item.label}</span>
@@ -61,9 +60,18 @@ const Hero = () => {
           {/* Card visualization */}
           <div className="flex-1 w-full max-w-md">
             <div className="relative aspect-[4/3] p-6">
+              {/* Logo display */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                <img 
+                  src="/lovable-uploads/c63c0914-45fc-498f-bd38-5e3149794f15.png" 
+                  alt="PayJoy Logo" 
+                  className="h-24 md:h-28 animate-float"
+                />
+              </div>
+              
               {/* Main card */}
               <div className={cn(
-                "absolute payment-card bg-gradient-to-br from-blue-600 to-indigo-600 p-6",
+                "absolute payment-card bg-gradient-to-br from-purple-600 to-blue-600 p-6",
                 "flex flex-col justify-between text-white shadow-xl rotate-6",
                 "animate-float hover-scale origin-bottom-left",
                 "border border-white/20"
@@ -94,7 +102,7 @@ const Hero = () => {
               
               {/* Secondary card */}
               <div className={cn(
-                "absolute payment-card bg-gradient-to-br from-purple-600 to-pink-600 p-6",
+                "absolute payment-card bg-gradient-to-br from-pink-600 to-purple-600 p-6",
                 "flex flex-col justify-between text-white shadow-xl -rotate-6",
                 "animate-float hover-scale origin-bottom-right",
                 "border border-white/20",
