@@ -1,69 +1,97 @@
-# Welcome to your Lovable project
+# Welcome to the PayJoy Project
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/8362d4fd-e9c0-4943-8e01-572a7cfba624
+This repository contains the source code for **PayJoy**, a modern payment solution that integrates UPI Tap-to-Pay technology with a contactless card and a super app. PayJoy aims to simplify transactions for travel, retail, utilities, and more, offering a seamless and secure payment experience.
 
-## How can I edit this code?
+**Project URL**: https://payjoy.dev (Placeholder URL - replace with actual URL if available)
 
-There are several ways of editing your application.
+## What is PayJoy?
 
-**Use Lovable**
+PayJoy combines the convenience of UPI with the versatility of a contactless card, enabling users to tap and pay anywhere, recharge on the go, and manage their finances through an all-in-one app. Key features include secure transactions, auto-recharge, travel integration, and premium subscription benefits.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8362d4fd-e9c0-4943-8e01-572a7cfba624) and start prompting.
+## How Can I Edit This Code?
 
-Changes made via Lovable will be committed automatically to this repo.
+There are several ways to modify and contribute to this project:
 
-**Use your preferred IDE**
+### Use Your Preferred IDE
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+To work locally with your favorite IDE:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone this repository:
+   ```sh
+   git clone <YOUR_GIT_URL>
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd payjoy
+   ```
+3. Install dependencies (requires Node.js & npm - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)):
+   ```sh
+   npm i
+   ```
+4. Start the development server with auto-reloading:
+   ```sh
+   npm run dev
+   ```
 
-Follow these steps:
+### Edit Files Directly in GitHub
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Navigate to the desired file in the repository.
+- Click the "Edit" button (pencil icon) at the top right.
+- Make changes and commit them directly.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Use GitHub Codespaces
 
-# Step 3: Install the necessary dependencies.
-npm i
+- Go to the main repository page.
+- Click the "Code" button (green button).
+- Select the "Codespaces" tab and click "New codespace."
+- Edit files in the browser-based environment and commit your changes.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## What Technologies Are Used?
 
-**Edit a file directly in GitHub**
+This project is built with the following technologies:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Vite**: Fast frontend tooling and development server.
+- **TypeScript**: Static typing for safer, more maintainable code.
+- **React**: Component-based UI framework.
+- **shadcn-ui**: Reusable, customizable UI components.
+- **Tailwind CSS**: Utility-first CSS framework for rapid styling.
 
-**Use GitHub Codespaces**
+## How Can I Deploy This Project?
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+To deploy PayJoy:
 
-## What technologies are used for this project?
+1. Build the project locally:
+   ```sh
+   npm run build
+   ```
+2. Host the output (from the `dist` folder) on a static hosting service like Netlify, Vercel, or GitHub Pages.
 
-This project is built with .
+For more deployment options, refer to the documentation of your preferred hosting platform.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Can I Use a Custom Domain?
 
-## How can I deploy this project?
+Custom domains are not natively supported yet. For now, we recommend deploying to a service like Netlify and configuring your domain there. Check their docs for details: [Netlify Custom Domains](https://docs.netlify.com/domains-https/custom-domains/).
 
-Simply open [Lovable](https://lovable.dev/projects/8362d4fd-e9c0-4943-8e01-572a7cfba624) and click on Share -> Publish.
+## Project Features
 
-## I want to use a custom domain - is that possible?
+- **UPI Tap-to-Pay**: Tap your card on NFC-enabled terminals for instant payments.
+- **Universal Acceptance**: Use it for travel (bus, train, flight), retail, and recharges.
+- **All-in-One App**: Manage cards, recharge balances, and access travel navigation.
+- **Advanced Security**: Tokenized transactions, encryption, and real-time fraud detection.
+- **Premium Benefits**: Priority processing, rewards, and travel insurance for subscribers.
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+For a full list of features, explore the app or visit the [PayJoy website](https://payjoy.dev).
+
+## Getting Started
+
+1. **Get Your Card**: Order online or pick up from authorized centers.
+2. **Activate & Load**: Tap your card on your phone to load funds via any UPI app.
+3. **Tap & Pay**: Use it anywhere with NFC-enabled terminals.
+
+Ready to dive in? Clone the repo and start exploring!
+
+---
+
+This version removes all "Lovable" branding, replaces it with PayJoy-specific details, and provides a clear explanation of the project’s purpose and functionality. Let me know if you’d like further adjustments!

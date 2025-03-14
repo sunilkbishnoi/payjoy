@@ -46,7 +46,7 @@ const mockCards = [
 const mockTransactions = [
   {
     id: 't1',
-    date: new Date(2023, 7, 15),
+    date: new Date(2025, 7, 15),
     merchant: 'Metro Rail',
     amount: -120,
     type: 'transport',
@@ -54,7 +54,7 @@ const mockTransactions = [
   },
   {
     id: 't2',
-    date: new Date(2023, 7, 14),
+    date: new Date(2025, 7, 14),
     merchant: 'City Bus',
     amount: -40,
     type: 'transport',
@@ -62,7 +62,7 @@ const mockTransactions = [
   },
   {
     id: 't3',
-    date: new Date(2023, 7, 13),
+    date: new Date(2025, 7, 13),
     merchant: 'SuperMart',
     amount: -450.25,
     type: 'retail',
@@ -70,7 +70,7 @@ const mockTransactions = [
   },
   {
     id: 't4',
-    date: new Date(2023, 7, 10),
+    date: new Date(2025, 7, 10),
     merchant: 'UPI Recharge',
     amount: 1000,
     type: 'recharge',

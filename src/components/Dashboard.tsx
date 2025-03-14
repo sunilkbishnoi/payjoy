@@ -97,7 +97,7 @@ const Dashboard = () => {
           
           <div className="flex items-center gap-4">
             <Button variant="outline" className="gap-2">
-              <span>October 2023</span>
+              <span>Feb 2025</span>
               <ChevronDown className="h-4 w-4" />
             </Button>
             <Button>
