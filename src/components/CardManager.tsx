@@ -14,7 +14,9 @@ import {
   PlusCircle,
   AlertCircle,
   CheckCircle,
-  ChevronRight
+  ChevronRight,
+  Bus,
+  ShoppingBag
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 

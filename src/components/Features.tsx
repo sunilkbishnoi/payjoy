@@ -13,7 +13,7 @@ import {
   AlertCircle,
   Smartphone,
   Wallet,
-  Refresh
+  RefreshCw
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 

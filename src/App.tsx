@@ -8,10 +8,7 @@ import Index from "./pages/Index";
 import CardPage from "./pages/CardPage";
 import DashboardPage from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
-import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-<lov-add-dependency>framer-motion@latest</lov-add-dependency>
 
 const queryClient = new QueryClient();
 
