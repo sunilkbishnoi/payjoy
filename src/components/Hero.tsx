@@ -95,7 +95,7 @@ const Hero = () => {
                 <div className="relative h-24 md:h-28 w-24 md:w-28 overflow-hidden rounded-2xl bg-white p-[2px] shadow-lg shadow-purple-500/30 animate-float">
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-blue-600 to-cyan-400 opacity-20 hover:opacity-30 transition-opacity duration-300 rounded-2xl"></div>
                   <img 
-                    src="/lovable-uploads/b8027dcc-1bb5-4237-991d-e70e67cf9e7e.png" 
+                    src="/uploads/b8027dcc-1bb5-4237-991d-e70e67cf9e7e.png" 
                     alt="PayJoy Logo" 
                     className="h-full w-full rounded-[calc(1rem-2px)] p-2 object-contain relative z-10"
                   />

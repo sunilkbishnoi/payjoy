@@ -57,7 +57,7 @@ export const Header = () => {
           <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-white p-[1px] shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-shadow duration-300">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-blue-600 to-cyan-400 opacity-20 hover:opacity-30 transition-opacity duration-300 rounded-xl"></div>
             <img 
-              src="/lovable-uploads/b8027dcc-1bb5-4237-991d-e70e67cf9e7e.png" 
+              src="/uploads/b8027dcc-1bb5-4237-991d-e70e67cf9e7e.png" 
               alt="PayJoy Logo" 
               className="h-full w-full rounded-[calc(0.75rem-1px)] object-contain p-1 relative z-10"
             />
