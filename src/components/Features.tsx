@@ -191,7 +191,7 @@ const Features = () => {
           <div className="flex justify-center">
             <div className="relative h-32 md:h-40 w-32 md:w-40 overflow-hidden rounded-3xl bg-gradient-to-br from-purple-600 to-blue-600 p-[3px] shadow-lg shadow-purple-500/20 animate-float mb-6">
               <img 
-                src="/uploads/c63c0914-45fc-498f-bd38-5e3149794f15.png" 
+                src="/uploads/b8027dcc-1bb5-4237-991d-e70e67cf9e7e.png" 
                 alt="PayJoy Logo" 
                 className="h-full w-full rounded-[calc(1.5rem-3px)] bg-white p-3 object-contain"
               />
